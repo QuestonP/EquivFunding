@@ -13,6 +13,13 @@ const styles = {
   
     marginX: "sm:mx-16 mx-6",
     marginY: "sm:my-16 my-6",
+    
+  };
+
+ export const stickySection = {
+    position: 'sticky',
+    top: '0', // Adjust the value as needed
+    zIndex: '100', // Add a high z-index to ensure the sections stay above other content
   };
   
   export const layout = {

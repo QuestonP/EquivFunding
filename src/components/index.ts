@@ -6,6 +6,8 @@ import MainSection from './MainSection'
 import Markets from './Markets'
 import Services from './Services'
 import Team from './Team'
+import Card from './Card'
+import CardCarousel from './CardCarousel'
 
 export {
     Navbar,
@@ -15,5 +17,7 @@ export {
     MainSection,
     Markets,
     Services,
-    Team
+    Team,
+    Card,
+    CardCarousel
 }

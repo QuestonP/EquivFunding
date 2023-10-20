@@ -1,9 +1,19 @@
 import React from 'react'
 
-const Button = () => {
+
+interface ButtonProps {
+  text: string,
+  color: string
+}
+
+
+const Button: React.FC<ButtonProps> = (props) => {
   return (
-    <div>Button</div>
-  )
+    <button className={` ${props.color} 
+     font-bold py-2 px-4 my-4 rounded`}>
+      {props.text}
+    </button>
+    )
 }
 
 export default Button
