@@ -3,6 +3,7 @@ import {navLinks} from '../constants'
 import logo from '../assets/logo.png'
 import close from '../assets/close.png'
 import menu from '../assets/menu.png'
+import BookingPopUp from './BookingPopUp'
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
@@ -10,7 +11,7 @@ const Navbar = () => {
     <nav className='w-full flex py-6 stikcy top-0 z-10
     justify-between items-center navbar sticky bg-white'>
       <img src={logo} alt=""
-      className='w-[90px]' />
+      className='w-[200px]' />
       <ul className='list-none sm:flex hidden
       justify-end items-center flex-1'>
         {navLinks.map((nav, index) => (
@@ -21,6 +22,9 @@ const Navbar = () => {
             <a href="">{nav.title}</a>
           </li>
         ))}
+                  <li>
+            <BookingPopUp />
+          </li>
       </ul>
 
       <div className='sm:hidden flex flex-1
@@ -45,6 +49,9 @@ const Navbar = () => {
               <a className='font-bold' href="">{nav.title}</a>
             </li>
           ))}
+          <li>
+            <BookingPopUp />
+          </li>
         </ul>
         </div>
       </div>

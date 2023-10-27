@@ -1,4 +1,3 @@
-import React from 'react'
 import { CardCarousel } from './index';
 
 const projectCards = [
@@ -38,8 +37,14 @@ const Services = () => {
   return (
     <div className="w-full mx-2 flex flex-col content-center my-4">
         <h1 className="text-center  text-white text-4xl font-poppins font-bold">Services</h1>
+        <div className='my-4'>
+          <h1 className='text-white text-3xl font-poppins font-bold my-3'> Indoor Services : </h1>
+        </div>
         <div className="w-full flex flex-row justify-between">
           <CardCarousel cards={projectCards} />
+        </div>
+        <div className='my-4'>
+          <h1 className='text-white text-3xl font-poppins font-bold my-3'> Outdoor Services : </h1>
         </div>
       </div>
   )

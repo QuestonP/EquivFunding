@@ -1,48 +1,8 @@
-import React from 'react';
 import styles from '../style';
 import * as constants from '../constants';
-import { Button, Card, CardCarousel } from './index';
+import { Button, } from './index';
 import Logo from '../assets/logo.png';
 import someWork from '../assets/someWork.png'
-import { useEffect, useRef, useState } from 'react';
-
-interface RevealOnScrollProps {
-  children: React.ReactNode;
-}
-
-const RevealOnScroll: React.FC<RevealOnScrollProps> = ({ children }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const scrollObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        scrollObserver.unobserve(entry.target);
-      }
-    });
-
-    if (ref.current) {
-      scrollObserver.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        scrollObserver.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  const classes = `transition-opacity duration-1000 ${
-    isVisible ? 'opacity-100' : 'opacity-0'
-  }`;
-
-  return (
-    <div ref={ref} className={classes}>
-      {children}
-    </div>
-  );
-};
 
 
 
@@ -81,6 +41,8 @@ const MainSection = () => {
           </div>
         </div>
       </div>
+      <div id='spacer' className='my-6 py-6'>
+      </div>
       <div id="AboutUsSection" className="my-6 py-6 w-screen flex flex-col my-5">
         <h1 className="text-4xl font-poppins text-center font-bold my-5">About Us</h1>
         <div className="flex flex-row justify-between mx-2">
@@ -88,11 +50,12 @@ const MainSection = () => {
             <img src={Logo} alt="" />
           </div>
           <div className="w-1/2 flex flex-row">
-            <p className="text-center text-2xl mx-5 justify-cennter">{constants.companyBio}</p>
+            <p className="text-center text-2xl mx-5 justify-cennter leading-loose">{constants.companyBio}</p>
           </div>
         </div>
       </div>
-      
+      <div id='spacer' className='my-6 py-6'>
+      </div>
     </section>
   );
 };

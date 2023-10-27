@@ -1,3 +1,5 @@
+
+
 export const navLinks = [
    {
     id: 'home/link',
@@ -11,10 +13,6 @@ export const navLinks = [
     id:'contacts/link',
     title: "Contact Us"
    },
-   {
-      id:'book/link',
-      title:'Book a Service'
-   }
 ]
 
 export const grServ = "Looking for Great Service,"
