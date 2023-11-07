@@ -1,37 +1,5 @@
 import { CardCarousel } from './index';
-
-const projectCards = [
-  {
-    title: 'Siding',
-    description: 'Here we did some siding on the house of one of our clients',
-    imageUrl: 'src/assets/siding.jpeg',
-  },
-  {
-    title: 'Landscaping?',
-    description: 'Landscaping? No problem!',
-    imageUrl: 'src/assets/landscaping.jpeg',
-  },
-  {
-    title: 'Outdoor Space',
-    description: 'Nicholas Construction is ready to take on your next outdoor project',
-    imageUrl: 'src/assets/stones.jpeg',
-  },
-  {
-    title: 'Siding',
-    description: 'Here we did some siding on the house of one of our clients',
-    imageUrl: 'src/assets/siding.jpeg',
-  },
-  {
-    title: 'Landscaping',
-    description: 'Landscaping? No problem!',
-    imageUrl: 'src/assets/landscaping.jpeg',
-  },
-  {
-    title: 'Outdoor Space',
-    description: 'Nicholas Construction is ready to take on your next outdoor project',
-    imageUrl: 'src/assets/stones.jpeg',
-  },
-];
+import { outdoorProjectCards , indoorProjectCards } from '../constants/ServiceCards';
 
 const Services = () => {
   return (
@@ -41,10 +9,13 @@ const Services = () => {
           <h1 className='text-white text-3xl font-poppins font-bold my-3'> Indoor Services : </h1>
         </div>
         <div className="w-full flex flex-row justify-between">
-          <CardCarousel cards={projectCards} />
+          <CardCarousel cards={indoorProjectCards} />
         </div>
         <div className='my-4'>
           <h1 className='text-white text-3xl font-poppins font-bold my-3'> Outdoor Services : </h1>
+        </div>
+        <div className="w-full flex flex-row justify-between">
+          <CardCarousel cards={outdoorProjectCards} />
         </div>
       </div>
   )
