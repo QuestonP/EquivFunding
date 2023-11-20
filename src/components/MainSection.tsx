@@ -8,7 +8,7 @@ import someWork from '../assets/someWork.png'
 
 const MainSection = () => {
   return (
-    <section id="home" className={`flex flex-col ${styles.paddingY} mt-6`}>
+    <section id="home" className={`flex flex-col ${styles.paddingY} mt-6 `} >
       <div id="introSection" className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 my-6`}>
         <div className="flex flex-row w-full justify-around mx-6">
           <div className="flex flex-col justify-between">
@@ -55,6 +55,21 @@ const MainSection = () => {
         </div>
       </div>
       <div id='spacer' className='my-6 py-6'>
+      </div>
+      <div id='meetTheTeamSection'>
+        <h1 className="text-3xl font-poppins text-center font-bold my-5">Meet the Team</h1>
+        <div className=''>
+          {
+          constants.teamInfo.map((team, index) => (
+              <div className={`font-poppins font-normal text-2xl text-center justify-center flex flex-col
+                ${index === constants.teamInfo.length - 1 ? 
+                'mr-0' : 'mr-10'} mr-10`}>
+                <h1 className='text-center text-3xl'>{team.title}</h1>
+                <img src={team.image} alt={`image ${index}`} className='w-[600px] mx-auto' />
+                <p>{team.text}</p>
+              </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -2,16 +2,40 @@
 
 export const navLinks = [
    {
-    id: 'home/link',
-    title: 'Home'
+    id: 'aboutUs/link',
+    title: 'About Us', 
+    link: '#AboutUsSection'
    },
    {
     id:'service/link',
-    title: "Services"
+    title: "Services", 
+    link: '#ServicesSection'
    },
    {
     id:'contacts/link',
-    title: "Contact Us"
+    title: "Contact Us",
+    link: ''
+   },
+]
+
+export const teamInfo = [
+   {
+      id: 'Antonio',
+      title: 'Founder',
+      text: 'Meet Antonio Nicholas, the founder and CEO of the company. ',
+      image: 'src/assets/worker.png'
+   },
+   {
+      id: 'Quest',
+      title: 'Chief Technology Officer',
+      text: 'Meet Quest Parker, the current CTO of Nicholas Construction. ',
+      image: ''
+   },
+   {
+      id: 'Dominick Sample',
+      title: 'Head of Design',
+      text: 'Meet Dominick Sample, the head of design for Nicholas Construction. ',
+      image: ''
    },
 ]
 

@@ -16,17 +16,17 @@ const Navbar = () => {
       justify-end items-center flex-1'>
         {navLinks.map((nav, index) => (
           <li key={nav.id} className={`font-poppins font-normal 
-          cursor-pointer text-[16px] hover:bg-blue-500 p-2 rounded
+          cursor-pointer text-[16px] hover:bg-blue-500 p-2 rounded hover:text-white
           ${index === navLinks.length - 1 ? 
           'mr-0' : 'mr-10'} mr-10`}>
-            <a href="">{nav.title}</a>
+            <a className='d-none' href={nav.link}>{nav.title}</a>
           </li>
         ))}
                   <li>
             <BookingPopUp />
           </li>
       </ul>
-
+          {/*Below is the mobile version for smaller screen sizes  */}
       <div className='sm:hidden flex flex-1
       justify-end items-center'>
         <img src={toggle ? close : menu} 
@@ -43,10 +43,10 @@ const Navbar = () => {
               {navLinks.map((nav, index) => (
               <li key={nav.id} className={`font-poppins font-normal 
               cursor-pointer text-[16px] text-center py-3 justify-center
-              hover:bg-blue-500 w-full rounded
+              hover:bg-blue-500 w-full rounded hover:text-white
               ${index === navLinks.length - 1 ? 
-              'mr-0' : 'mb-4'} text-white mr-10`}>
-              <a className='font-bold' href="">{nav.title}</a>
+              'mr-0' : 'mb-4'} mr-10`}>
+              <a className='font-bold ' href="">{nav.title}</a>
             </li>
           ))}
           <li>

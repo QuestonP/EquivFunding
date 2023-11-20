@@ -32,8 +32,8 @@ function BookingForm() {
     setAddress(e.target.value);
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
   
     const formData = {
       name,
@@ -55,11 +55,13 @@ function BookingForm() {
   
       if (response.ok) {
         // Request was successful, do something with the response
+        
       } else {
         // Handle errors
       }
     } catch (error) {
       // Handle network or request errors
+      console.log(error)
     }
   };
 
@@ -95,7 +97,9 @@ function BookingForm() {
             <label htmlFor="streetAddress" className="form-label">Street Address : </label>
             <input type="text" className="form-control w-[80%]" id="streetAddress" value={address} onChange={handleAddressChange} />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <div className='text-center my-6'>
+            <button type="submit" className="btn btn-primary bg-blue-500 text-white p-4 rounded hover:bg-blue-700">Submit</button>
+          </div>
         </div>
       </form>
     </div>
