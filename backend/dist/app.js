@@ -11,18 +11,16 @@ const { MongoClient } = require("mongodb");
 const mongoose = require('mongoose');
 const express = require('express');
 const Booking = require('./models/Bookings');
+require('dotenv').config();
 const app = express();
+const api_url = process.env.API_URL;
+const uri = process.env.URI;
+const port = process.env.PORT;
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        // TODO:
-        // Replace the placeholder connection string below with your
-        // Altas cluster specifics. Be sure it includes
-        // a valid username and password! Note that in a production environment,
-        // you do not want to store your password in plain-text here.
-        const uri = "mongodb+srv://quest:lynnhunt@cluster0.8aif6n0.mongodb.net/BookingsDB?retryWrites=true&w=majority";
         mongoose.connect(uri).then((res) => {
             console.log('You have connected to the database');
-            app.listen(3000);
+            app.listen(port);
         }).catch((err) => {
             console.log(err);
         });
@@ -44,9 +42,19 @@ function run() {
         const collection = database.collection(collectionName);
         // Make sure to call close() on your client to perform cleanup operations
         yield client.close();
-        // create a new booking route 
+        // Create a new booking route
         app.post('/create-booking', (req, res) => {
-            // .save().then((result) => { res.send(result). catch(err)}) will save an item to the database
+            const data = req.body; // Use req.body to access the request body
+            Booking.save(data)
+                .then((result) => {
+                res.send(result);
+                console.log('Booking Successful');
+            })
+                .catch((err) => {
+                // Handle any errors that occurred during the save operation
+                console.error(err);
+                res.status(500).send('An error occurred while saving the booking.');
+            });
         });
         app.get('/all-bookings', (req, res) => {
             // Gets all the Bookings in the database

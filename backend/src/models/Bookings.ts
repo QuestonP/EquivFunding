@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const bookingsSchema = new Schema({
+export const bookingsSchema = new Schema({
     firstName : {
        type: String,
        required: true
@@ -10,6 +10,10 @@ const bookingsSchema = new Schema({
         type: String,
         required: true
      }, 
+    Email : {
+      type: String,
+      required: true
+   }, 
     Phone: {
         type: String,
         required: true

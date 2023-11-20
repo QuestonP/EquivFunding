@@ -1,13 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.bookingsSchema = void 0;
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bookingsSchema = new Schema({
+exports.bookingsSchema = new Schema({
     firstName: {
         type: String,
         required: true
     },
     lastName: {
+        type: String,
+        required: true
+    },
+    Email: {
         type: String,
         required: true
     },
@@ -28,5 +33,5 @@ const bookingsSchema = new Schema({
         required: true
     },
 }, { timestamps: true });
-const Booking = mongoose.model('Booking', bookingsSchema);
+const Booking = mongoose.model('Booking', exports.bookingsSchema);
 exports.default = Booking;
